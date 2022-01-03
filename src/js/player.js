@@ -20,6 +20,7 @@ import HotKey from './hotkey';
 import ContextMenu from './contextmenu';
 import InfoPanel from './info-panel';
 import tplVideo from '../template/video.art';
+import SelectChapter from './selectchapter';
 
 let index = 0;
 const instances = [];
@@ -150,6 +151,11 @@ class DPlayer {
 
         index++;
         instances.push(this);
+
+        if (options.playlist && options.playlist.selected >= 0 && options.playlist.videos.length > 0) {
+            this.selectchapter = new SelectChapter(this);
+        }
+        console.log(this);
     }
 
     /**

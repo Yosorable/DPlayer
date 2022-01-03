@@ -15,6 +15,7 @@ import camera from '../assets/camera.svg';
 import airplay from '../assets/airplay.svg';
 import subtitle from '../assets/subtitle.svg';
 import loading from '../assets/loading.svg';
+import next from '../assets/next.svg';
 
 const Icons = {
     play: play,
@@ -34,6 +35,7 @@ const Icons = {
     subtitle: subtitle,
     loading: loading,
     airplay: airplay,
+    next: next,
 };
 
 export default Icons;

@@ -157,6 +157,12 @@
         height: 38px;
         position: absolute;
         bottom: 0;
+        .dplayer-next-icon {
+            width: 35px !important;
+            &.dplayer-next-icon-hide {
+                display: none;
+            }
+        }
         &.dplayer-comment-box {
             display: none;
             position: absolute;
@@ -534,6 +540,53 @@
             //     z-index: 1;
             //     display: none;
             // }
+        }
+        .dplayer-select-chapter {
+            display: inline-block;
+            height: 100%;
+            position: relative;
+            button {
+                width: 43px;
+                font-family: '微软雅黑';
+            }
+            &.hide {
+                display: none;
+            }
+            .dplayer-select-chapter-box {
+                max-height: 50vh;
+                width: 300px;
+                position: absolute;
+                bottom: 50px;
+                right: 0;
+                border-radius: 2px;
+                background: rgba(28, 28, 28, 0.9);
+                padding: 7px 5px;
+                transition: all 0.3s ease-in-out;
+                overflow: auto;
+                z-index: 2;
+                opacity: 0;
+                visibility: hidden;
+                &.dplayer-select-chapter-box-open {
+                    opacity: 1;
+                    visibility: visible;
+                }
+                .dplayer-chapter-item {
+                    height: 30px;
+                    width: 100%;
+                    padding: 5px 10px;
+                    box-sizing: border-box;
+                    cursor: pointer;
+                    position: relative;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    &:hover {
+                        background-color: rgba(255, 255, 255, 0.1);
+                    }
+                    &.active {
+                        color: rgb(54, 148, 198);
+                    }
+                }
+            }
         }
         .dplayer-quality {
             position: relative;

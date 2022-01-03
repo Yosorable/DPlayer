@@ -88,6 +88,8 @@ class FullScreen {
         if (anotherTypeOn) {
             this.cancel(anotherType);
         }
+
+        this.player.selectchapter && this.player.selectchapter.showButton();
     }
 
     cancel(type = 'browser') {
@@ -112,6 +114,11 @@ class FullScreen {
                 document.body.classList.remove('dplayer-web-fullscreen-fix');
                 this.player.events.trigger('webfullscreen_cancel');
                 break;
+        }
+
+        if (this.player.selectchapter) {
+            this.player.selectchapter.hideBox();
+            this.player.selectchapter.hideButton();
         }
     }
 

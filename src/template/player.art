@@ -77,6 +77,11 @@
         <button class="dplayer-icon dplayer-play-icon">
             <span class="dplayer-icon-content">{{@ icons.play }}</span>
         </button>
+        {{ if options.playlist.selected >= 0 && options.playlist.selected != options.playlist.videos.length - 1 }}
+        <button class="dplayer-icon dplayer-next-icon">
+            <span class="dplayer-icon-content">{{@ icons.next }}</span>
+        </button>
+        {{ /if }}
         <div class="dplayer-volume">
             <button class="dplayer-icon dplayer-volume-icon">
                 <span class="dplayer-icon-content">{{@ icons.volumeDown }}</span>
@@ -132,6 +137,16 @@
             </button>
         </div>
         {{ /if }}
+        {{ if options.playlist.selected >= 0 }}
+        <div class="dplayer-select-chapter hide">
+            <button class="dplayer-icon dplayer-label">选集</button>
+            <div class="dplayer-select-chapter-box">
+                {{ each options.playlist.videos }}
+                    <div class="dplayer-chapter-item dplayer-label {{ $index === options.playlist.selected ? "active" : "" }}" index="{{ $index }}">{{ $value.title }}</div>
+                {{ /each }}
+            </div>
+        </div>
+        {{ /if}}
         <div class="dplayer-setting">
             <button class="dplayer-icon dplayer-setting-icon" data-balloon="{{ tran('Setting') }}" data-balloon-pos="up">
                 <span class="dplayer-icon-content">{{@ icons.setting }}</span>

@@ -54,6 +54,33 @@ function initPlayers() {
             api: 'https://api.prprpr.me/dplayer/'
         }
     });
+    //dp0
+    window.dp0 = new DPlayer({
+        container: document.getElementById('dplayer0'),
+        preload: 'none',
+        screenshot: true,
+        video: {
+            url: 'https://api.dogecloud.com/player/get.mp4?vcode=5ac682e6f8231991&userId=17&ext=.mp4',
+            pic: 'https://i.loli.net/2019/06/06/5cf8c5d9c57b510947.png'
+        },
+        playlist: {
+            selected: 0,
+            videos: (()=>{
+                let res = []
+                res.push({
+                    title: "第1话",
+                    url: 'https://api.dogecloud.com/player/get.mp4?vcode=5ac682e6f8231991&userId=17&ext=.mp4'
+                })
+                for (let i = res.length; i < 30; i++) {
+                    res.push({
+                        title: `第${i + 1}话`,
+                        url: 'https://1251316161.vod2.myqcloud.com/007a649dvodcq1251316161/71f2ce495285890811352802809/nLPsC5ZQuJcA.mp4',
+                    });
+                }
+                return res;
+            })()
+        }
+    })
     // dp1
     window.dp1 = new DPlayer({
         container: document.getElementById('dplayer1'),
